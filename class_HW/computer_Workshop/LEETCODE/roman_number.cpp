@@ -93,7 +93,5 @@ int main()
     cin>>inp;
     Solution s1;
     s1.romanToInt(inp);
-    //ans=s1.romanToInt(inp);
-    //cout<<ans;
     return 0;
 }
