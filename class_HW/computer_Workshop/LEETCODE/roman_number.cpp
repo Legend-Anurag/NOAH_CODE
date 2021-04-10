@@ -44,29 +44,16 @@ class Solution {
 
         len=sizeof(char_arr);
 
-        for(i=0;i<len;i++)
-        {
-            cout <<char_arr[i];
-        }
-
-        cout<<"Length"<<len<<endl;
         int sum=0,extra=0;
         int exarr[len];
         for(i=0;i<len;i++)
         {
 
-            cout<<i<<"element of rarray"<<Rarr[i]<<endl;
             for(j=0;j<=6;j++)
             {
-                cout<<j<<"element of char_Arr"<<char_arr[j]<<endl;
                 if(char_arr[i]==Rarr[j])
                 {
-                    cout<<char_arr[i]<<"  In char array"<<endl;
-                    cout<<Rarr[j]<<"  In R array"<<endl;
-
                     sum+=narr[j];
-                    cout<<sum<<endl;
-
                     exarr[i]=narr[j];
                 }
             }  
@@ -74,15 +61,12 @@ class Solution {
         
         for(k=0;k<len-1;k++)
         {
-            cout<<exarr[k]<<endl;
             if(exarr[k]<exarr[k+1])
             {
                 extra+=2*(exarr[k]);
-                cout<<"HI"<<extra<<endl;
             }
         }
-        cout<<extra<<endl;
-        cout<<"The number is: "<<sum-extra<<endl;
+        cout<<sum-extra<<endl;
     }
 };
 
