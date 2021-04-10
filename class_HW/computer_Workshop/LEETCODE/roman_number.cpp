@@ -28,11 +28,68 @@ Output: 3
 
 #include<iostream>
 #include<string>
+#include <cstring>
 using namespace std;
 
 class Solution {
-public:
-    int romanToInt(string s) {
-        
+    int narr[7]={1,5,10,50,100,500,1000};
+    char Rarr[8]="IVXLCDM";
+
+    public:
+    Solution(string s)
+    {
+        //Displaying each characters of char_arr
+        /*
+        for(i=0;i<5;i++)
+        {
+            cout << char_arr[i];
+        }
+        */
+    }
+
+    void romanToInt(string s)
+    {
+        int i,j,len,k;
+        char char_arr[s.size()];
+        strcpy(char_arr, s.c_str());
+
+        len=sizeof(char_arr);
+        cout<<"eLEMENTS IN CHAR ARR "<<endl;
+        for(i=0;i<len;i++)
+        {
+            cout <<char_arr[i];
+        }
+        cout<<"eLEMENTS IN Roman ARR "<<Rarr<<endl;
+        cout<<"Length"<<len<<endl;
+        int sum=0;
+        for(i=0;i<=6;i++)
+        {
+            cout<<i<<"element of rarray"<<Rarr[i]<<endl;
+            for(j=0;j<len;j++)
+            {
+                cout<<j<<"element of char_Arr"<<char_arr[j]<<endl;
+                if(Rarr[i]==char_arr[j])
+                {
+                    cout<<Rarr[i]<<"  In R array"<<endl;
+                    cout<<char_arr[j]<<"  In char array"<<endl;
+
+                    sum+=narr[i];
+                    cout<<sum<<endl;
+                }
+            }    
+        }
+        cout<<"The number is: "<<sum<<endl;
     }
 };
+
+int main()
+{
+    string inp;
+    int ans;
+    cin>>inp;
+    Solution s1(inp);
+    s1.romanToInt(inp);
+    //ans=s1.romanToInt(inp);
+    //cout<<ans;
+    return 0;
+}
