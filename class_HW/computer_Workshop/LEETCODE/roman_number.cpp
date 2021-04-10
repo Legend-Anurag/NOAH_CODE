@@ -36,17 +36,6 @@ class Solution {
     char Rarr[8]="IVXLCDM";
 
     public:
-    Solution(string s)
-    {
-        //Displaying each characters of char_arr
-        /*
-        for(i=0;i<5;i++)
-        {
-            cout << char_arr[i];
-        }
-        */
-    }
-
     void romanToInt(string s)
     {
         int i,j,len,k;
@@ -54,31 +43,46 @@ class Solution {
         strcpy(char_arr, s.c_str());
 
         len=sizeof(char_arr);
-        cout<<"eLEMENTS IN CHAR ARR "<<endl;
+
         for(i=0;i<len;i++)
         {
             cout <<char_arr[i];
         }
-        cout<<"eLEMENTS IN Roman ARR "<<Rarr<<endl;
+
         cout<<"Length"<<len<<endl;
-        int sum=0;
-        for(i=0;i<=6;i++)
+        int sum=0,extra=0;
+        int exarr[len];
+        for(i=0;i<len;i++)
         {
+
             cout<<i<<"element of rarray"<<Rarr[i]<<endl;
-            for(j=0;j<len;j++)
+            for(j=0;j<=6;j++)
             {
                 cout<<j<<"element of char_Arr"<<char_arr[j]<<endl;
-                if(Rarr[i]==char_arr[j])
+                if(char_arr[i]==Rarr[j])
                 {
-                    cout<<Rarr[i]<<"  In R array"<<endl;
-                    cout<<char_arr[j]<<"  In char array"<<endl;
+                    cout<<char_arr[i]<<"  In char array"<<endl;
+                    cout<<Rarr[j]<<"  In R array"<<endl;
 
-                    sum+=narr[i];
+                    sum+=narr[j];
                     cout<<sum<<endl;
+
+                    exarr[i]=narr[j];
                 }
-            }    
+            }  
         }
-        cout<<"The number is: "<<sum<<endl;
+        
+        for(k=0;k<len-1;k++)
+        {
+            cout<<exarr[k]<<endl;
+            if(exarr[k]<exarr[k+1])
+            {
+                extra+=2*(exarr[k]);
+                cout<<"HI"<<extra<<endl;
+            }
+        }
+        cout<<extra<<endl;
+        cout<<"The number is: "<<sum-extra<<endl;
     }
 };
 
@@ -87,7 +91,7 @@ int main()
     string inp;
     int ans;
     cin>>inp;
-    Solution s1(inp);
+    Solution s1;
     s1.romanToInt(inp);
     //ans=s1.romanToInt(inp);
     //cout<<ans;
