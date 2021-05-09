@@ -6,7 +6,7 @@
 
 int main() {
 	
-    int size, mod=0, i, ans=0;
+    int size, ans=0;
     scanf("%d", &size);
 
     int inp[size];
