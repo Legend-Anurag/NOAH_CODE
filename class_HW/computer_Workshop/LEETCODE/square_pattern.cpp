@@ -1,3 +1,4 @@
+// https://www.hackerrank.com/challenges/printing-pattern-2/problem
 #include <iostream>
 using namespace std;
 
