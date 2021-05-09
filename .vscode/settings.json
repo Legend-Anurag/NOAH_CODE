@@ -101,7 +101,8 @@
         "iostream": "cpp",
         "ostream": "cpp",
         "stdlib.h": "c",
-        "ratio": "c"
+        "ratio": "c",
+        "cmath": "cpp"
     },
     "code-runner.runInTerminal": true,
     "python.pythonPath": "C:\\Users\\Anurag\\AppData\\Local\\Programs\\Python\\Python37\\python.exe"
