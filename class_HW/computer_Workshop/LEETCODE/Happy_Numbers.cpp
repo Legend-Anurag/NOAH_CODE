@@ -1,4 +1,5 @@
 /*
+https://leetcode.com/problems/happy-number/
 Write an algorithm to determine if a number n is happy.
 
 A happy number is a number defined by the following process:
@@ -22,3 +23,43 @@ Input: n = 2
 Output: false
 */
 
+#include <bits/stdc++.h>
+using namespace std;
+int SumOfSquNum(int givno)
+{
+    int SumOfSqr = 0;
+    while (givno)
+    {
+        SumOfSqr += (givno % 10) * (givno % 10);
+        givno /= 10;
+    }
+    return SumOfSqr;
+}
+bool checkHappy(int chkhn)
+{
+    int slno, fstno;
+    slno = fstno = chkhn;
+    do
+    {
+        slno = SumOfSquNum(slno);
+        fstno = SumOfSquNum(SumOfSquNum(fstno));
+        cout<<"slno"<<slno<<endl;
+        cout<<"fstno"<<fstno<<endl;
+
+    }
+    while (slno != fstno);
+    return (slno == 1);
+}
+int main()
+{
+int hyno;
+ cout << "\n\n Check whether a number is Happy number or not: \n";
+ cout << " ---------------------------------------------------\n";
+ cout << " Input a number: ";
+ cin >> hyno;
+
+    if (checkHappy(hyno))
+        cout << hyno << " is a Happy number\n";
+    else
+        cout << hyno << " is not a Happy number\n";
+}
