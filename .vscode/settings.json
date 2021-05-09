@@ -100,7 +100,8 @@
         "DEMO.C": "cpp",
         "iostream": "cpp",
         "ostream": "cpp",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "ratio": "c"
     },
     "code-runner.runInTerminal": true,
     "python.pythonPath": "C:\\Users\\Anurag\\AppData\\Local\\Programs\\Python\\Python37\\python.exe"
